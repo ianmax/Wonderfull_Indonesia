@@ -5,14 +5,14 @@ const app=require("express")();
 // Preview / Content Wikipedia
 // Array of image url
 // Array of image owner
-const api=require("./routes/app.js");
+const api=require("./routes/api");
 app.use("/api",api);
 
-const landing=require("./routes/index");
-app.use("/",landing);
-
-const result=require("./routes/result");
-app.use("/result",result);
+// const landing=require("./routes/index");
+// app.use("/",landing);
+//
+// const result=require("./routes/result");
+// app.use("/result",result);
 
 app.listen(3000,()=>{
     console.log("Listenning on port 3000");
