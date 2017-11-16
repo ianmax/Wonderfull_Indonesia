@@ -1,0 +1,30 @@
+{
+  "name": "wonderfull_indonesia",
+  "version": "1.0.0",
+  "description": "Get more info about Indonesia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianmax/Wonderfull_Indonesia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ianmax/Wonderfull_Indonesia/issues"
+  },
+  "homepage": "https://github.com/ianmax/Wonderfull_Indonesia#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "fb": "^2.0.0",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.13.3",
+    "morgan": "^1.9.0",
+    "oauth": "^0.9.15"
+  }
+}
