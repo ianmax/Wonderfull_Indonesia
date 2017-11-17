@@ -1,5 +1,26 @@
 @import "common";
 
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../image/index.jpg");
+}
+#background::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0,0,0,.5);
+    background: radial-gradient(rgba(0,0,0,.2),rgba(0,0,0,.8));
+    background: -o-radial-gradient(rgba(0,0,0,.2),rgba(0,0,0,.8));
+    background: -moz-radial-gradient(rgba(0,0,0,.2),rgba(0,0,0,.8));
+    background: -webkit-radial-gradient(rgba(0,0,0,.2),rgba(0,0,0,.8));
+}
+
 #welcome {
     left: 0;
     right: 0;

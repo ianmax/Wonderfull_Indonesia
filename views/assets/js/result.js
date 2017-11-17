@@ -25,14 +25,29 @@ $(document).ready(function(){
                     }
                 },
                 error:function(){
-                    console.log("problem");
-                    // localStorage.removeItem("login_token");
-                    // window.location.replace("/views");
+                    alert("Something went wrong!");
                 }
             });
         },500);
     }
-
+    $(this).on("click","#cari",function(event){
+        event.preventDefault();
+        const searchInput={
+            pencarian:$("#pencarian").val(),
+            type:$("#search-type").val()
+        }
+        console.log(searchInput);
+        // $.ajax({
+        //     url:"http://localhost:3000/api",
+        //     method:"POST",
+        //     dataType:"json",
+        //     data:searchInput,
+        //     success:function(fromServer){},
+        //     error:function(){
+        //         alert("Something went wrong!");
+        //     }
+        // });
+    });
     // Onclick logout button
     $(this).on("click","#logout",function(event){
         event.preventDefault();
