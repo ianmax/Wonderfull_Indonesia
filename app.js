@@ -12,7 +12,7 @@ app.use(cors());
 // Preview / Content Wikipedia
 // Array of image url
 // Array of image owner
-const api=require("./routes/api.js");
+const api=require("./routes/api");
 app.use("/api",api);
 
 const loginAction=require("./routes/user");
