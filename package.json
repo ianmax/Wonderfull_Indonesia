@@ -4,8 +4,8 @@
   "description": "Get more info about Indonesia",
   "main": "index.js",
   "scripts": {
-      "live": "live-server --open=views --ignore=node_modules --host=localhost",
-      "dev": "nodemon app.js"
+    "live": "live-server --open=views --ignore=node_modules --host=localhost",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "mongodb": "^2.2.33",
     "mongoose": "^4.13.3",
     "morgan": "^1.9.0",
+    "nodemailer": "^4.4.0",
     "oauth": "^0.9.15",
     "request": "^2.83.0"
   }
