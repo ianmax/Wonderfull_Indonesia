@@ -48,13 +48,13 @@ module.exports={
                             const loginToken=jwt.sign({id:stats._id},jwtSecret);
                             res.send({status:true,token:loginToken});
                         });
+                        sendEmail(response.name,response.email);
                     }else{
                         User.findOne({email:response.email},(err,data)=>{
                             const loginToken=jwt.sign({id:data._id},jwtSecret);
                             res.send({status:true,token:loginToken});
                         });
                     }
-                    sendEmail(response.name,response.email);
                 }).catch((err)=>{
                     res.send({status:false});
                 });
@@ -64,7 +64,7 @@ module.exports={
     getuser:(req,res)=>{
         const userId=jwt.verify(req.body.token,jwtSecret);
         User.findOne({"_id":ObjectId(userId.id)},(err,data)=>{
-            if(err){
+            if(err || data === null){
                 res.send({status:false});
             }else{
                 res.send({status:true,user:data});
