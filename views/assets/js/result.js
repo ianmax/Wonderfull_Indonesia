@@ -11,7 +11,6 @@ $(document).ready(function(){
                 dataType:"json",
                 data:loginToken,
                 success:function(fromServer){
-                    console.log(fromServer);
                     if(!fromServer.status){ // Jika error terjadi pada backend
                         alert("Something went wrong!");
                         localStorage.removeItem("login_token");
