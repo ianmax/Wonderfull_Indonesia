@@ -4,7 +4,8 @@
   "description": "Get more info about Indonesia",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "live": "live-server --open=views --ignore=node_modules --host=localhost",
+      "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
