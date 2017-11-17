@@ -3,6 +3,31 @@ const jwt=require("jsonwebtoken");
 const jwtSecret=process.env.JWT_SECRET;
 const ObjectId=require('mongodb').ObjectID;
 const User=require("../models/userModel");
+const nodemailer=require("nodemailer");
+
+const sendEmail=(username,useremail)=>{
+    const transporter=nodemailer.createTransport({
+        host:"smtp.gmail.com",
+        port:587,
+        secure:false,
+        requireTLS:true,
+        auth:{
+            user:"testemailajah@gmail.com",
+            pass:"testemail12345"
+        }
+    });
+    const mailContent={
+        from:"noreply_indonesia@gmail.com",
+        to:useremail,
+        subject:"Terimakasih!",
+        text:`Terimakasih ${username} telah mendaftar sebagai beta user dengan email ${useremail}`
+    };
+    transporter.sendMail(mailContent,(err)=>{
+        if(err){
+            console.log("Email gagal terkirim!");
+        }
+    });
+}
 
 module.exports={
     login:(req,res)=>{
@@ -29,6 +54,7 @@ module.exports={
                             res.send({status:true,token:loginToken});
                         });
                     }
+                    sendEmail(response.name,response.email);
                 }).catch((err)=>{
                     res.send({status:false});
                 });
