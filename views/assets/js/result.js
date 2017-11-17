@@ -11,13 +11,15 @@ $(document).ready(function(){
                 dataType:"json",
                 data:loginToken,
                 success:function(fromServer){
-                    if(!fromServer.status){
+                    if(!fromServer.status){ // Jika error terjadi pada backend
                         alert("Something went wrong!");
                         localStorage.removeItem("login_token");
                         window.location.replace("/views");
-                    }else{
+                    }else{ // Jika tidak ditemukan error
                         const userData=fromServer.user;
-                        $(".welcome-msg").append(" "+userData.name).fadeIn(500,function(){
+                        $("span.text").append(" "+userData.name);
+                        $("span.profile").css("backgroundImage",`url(${userData.profile})`);
+                        $(".welcome-msg").fadeIn(500,function(){
                             setTimeout(function(){
                                 $(".welcome-msg").fadeOut(500);
                             },4000);
@@ -30,6 +32,7 @@ $(document).ready(function(){
             });
         },500);
     }
+
     $(this).on("click","#cari",function(event){
         event.preventDefault();
         const searchInput={
@@ -58,7 +61,6 @@ $(document).ready(function(){
                 $("#main-image").prop("src",arrImage["0"].url_m);
                 $("#title").html(fromServer.wikipedia.title);
                 $("#description").append(fromServer.wikipedia.extract);
-                console.log(arrImage);
             },
             error:function(){
                 alert("Something went wrong!");

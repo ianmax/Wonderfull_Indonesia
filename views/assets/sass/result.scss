@@ -48,6 +48,7 @@
             transform: translateY(-50%);
         }
         input:hover {
+            -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.30);
             box-shadow: 0 0 10px 0 rgba(0,0,0,.30);
         }
     }
@@ -115,15 +116,36 @@
     .welcome-msg {
         color: #555;
         display: none;
-        padding: 18px;
-        font-size: 18px;
+        padding: 10px;
         margin-top: 25px;
+        overflow: hidden;
+        position: relative;
         border-radius: 8px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         background-color: white;
         border: 2px solid #3498DB;
+        -webkit-box-sizing: border-box;
         font-family: "Roboto",sans-serif;
+        span {
+            display: block;
+        }
+        .profile {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: red;
+            background-size: cover;
+            border: 2px solid #3498DB;
+            background-position: center;
+        }
+        .text {
+            top: 50%;
+            font-size: 18px;
+            margin-left: 45px;
+            position: absolute;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
     }
     .page {
         width: 100%;
