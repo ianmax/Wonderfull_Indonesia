@@ -84,6 +84,26 @@
             background-image: url("../icon/search.png");
         }
     }
+    .search-type {
+        top: 50%;
+        color: white;
+        height: 40px;
+        outline: none;
+        font-size: 18px;
+        cursor: pointer;
+        margin-left: 25px;
+        position: relative;
+        border-radius: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: 2px solid white;
+        background-color: transparent;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        option {
+            color: #2980B9;
+        }
+    }
 }
 
 #content {
