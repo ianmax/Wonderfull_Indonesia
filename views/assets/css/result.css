@@ -149,7 +149,8 @@ html, body {
       font-family: "Roboto",sans-serif; }
     #content .page .description {
       display: block;
-      margin-top: 20px; }
+      margin-top: 20px;
+      font-family: "Roboto",sans-serif; }
     #content .page .more-image {
       margin: 0;
       padding: 0;
