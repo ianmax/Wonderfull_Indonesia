@@ -20,7 +20,7 @@ module.exports={
                             name:response.name,
                             profile:response.picture.data.url
                         }).save((err,stats)=>{
-                            const loginToken=jwt.sign(stats._id,jwtSecret);
+                            const loginToken=jwt.sign({id:stats._id},jwtSecret);
                             res.send({status:true,token:loginToken});
                         });
                     }else{
