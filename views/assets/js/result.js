@@ -36,23 +36,41 @@ $(document).ready(function(){
             pencarian:$("#pencarian").val(),
             type:$("#search-type").val()
         }
-        console.log(searchInput);
         $.ajax({
-            url:`http://localhost:3000/api/${$("#pencarian").val()}`,
-            method:"GET",
+            url:`http://localhost:3000/api`,
+            method:"POST",
             dataType:"json",
             data:searchInput,
             success:function(fromServer){
                 $("#empty").remove();
-                $("#title").html(fromServer.title);
-                $("#description").append(fromServer.extract);
-                console.log(fromServer);
+                $(".trigger").html("");
+                $("#more-image").html("");
+                $("#main-image").prop("src","");
+                // Separator
+                const arrImage=JSON.parse(fromServer.flickr).photos.photo;
+                arrImage.forEach((image)=>{
+                    $("#more-image").append(
+                        `<li>
+                        <div style="background-image:url(${image.url_m})" class="each-image" url="${image.url_m}"></div>
+                        </li>`
+                    );
+                });
+                $("#main-image").prop("src",arrImage["0"].url_m);
+                $("#title").html(fromServer.wikipedia.title);
+                $("#description").append(fromServer.wikipedia.extract);
+                console.log(arrImage);
             },
             error:function(){
                 alert("Something went wrong!");
             }
         });
     });
+
+    $(this).on("click",".each-image",function(event){
+        event.preventDefault();
+        $("#main-image").prop("src",$(this).attr("url"));
+    });
+
     // Onclick logout button
     $(this).on("click","#logout",function(event){
         event.preventDefault();

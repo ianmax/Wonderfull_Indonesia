@@ -1,9 +1,10 @@
 const wikipediaModel = require('../models/wikipediaModel');
 
-var pencarianwikipedia = (req, res) => {
-  wikipediaModel(req.params.id, (hasil) => {
-    res.send(hasil)
-  })
+var pencarianwikipedia = (req,res,next) => {
+    wikipediaModel(req.body.pencarian,(hasil)=>{
+        req.wikiResult=hasil;
+        next();
+    });
 }
 
 

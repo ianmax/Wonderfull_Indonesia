@@ -136,8 +136,12 @@
         background-color: white;
         -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
         box-shadow: 0 0 10px 0 rgba(0,0,0,.15);
-        img {
+        .main-image {
+            width: 100%;
+            margin: auto;
             display: block;
+            margin-top: 20px;
+            max-width: 500px;
         }
         .empty {
             color: #777;
@@ -157,6 +161,24 @@
         .description {
             display: block;
             margin-top: 20px;
+        }
+        .more-image {
+            margin: 0;
+            padding: 0;
+            margin-top: 20px;
+            overflow: hidden;
+            text-align: center;
+            li {
+                display: inline-block;
+            }
+            .each-image {
+                width: 100px;
+                height: 60px;
+                cursor: pointer;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
         }
     }
 }
