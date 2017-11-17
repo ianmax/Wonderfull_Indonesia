@@ -131,6 +131,13 @@ html, body {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15); }
     #content .page img {
       display: block; }
+    #content .page .empty {
+      color: #777;
+      font-size: 30px;
+      padding-top: 30px;
+      text-align: center;
+      padding-bottom: 30px;
+      font-family: "Roboto",sans-serif; }
     #content .page .title {
       color: #777;
       display: block;

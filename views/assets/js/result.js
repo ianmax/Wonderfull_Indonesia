@@ -37,16 +37,21 @@ $(document).ready(function(){
             type:$("#search-type").val()
         }
         console.log(searchInput);
-        // $.ajax({
-        //     url:"http://localhost:3000/api",
-        //     method:"POST",
-        //     dataType:"json",
-        //     data:searchInput,
-        //     success:function(fromServer){},
-        //     error:function(){
-        //         alert("Something went wrong!");
-        //     }
-        // });
+        $.ajax({
+            url:`http://localhost:3000/api/${$("#pencarian").val()}`,
+            method:"GET",
+            dataType:"json",
+            data:searchInput,
+            success:function(fromServer){
+                $("#empty").remove();
+                $("#title").html(fromServer.title);
+                $("#description").append(fromServer.extract);
+                console.log(fromServer);
+            },
+            error:function(){
+                alert("Something went wrong!");
+            }
+        });
     });
     // Onclick logout button
     $(this).on("click","#logout",function(event){
